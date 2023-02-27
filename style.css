@@ -1,0 +1,163 @@
+.theme-light {
+  --bg-color: #ffffff;
+  --white-color: #ffffff;
+  --font-color: #323238;
+  --selected-song: #02799D;
+  --unselected-song: #E1E1E6;
+}
+
+.theme-dark {
+  --bg-color: #121214;
+  --white-color: #ffffff;
+  --font-color: #C4C4CC;
+  --selected-song: #0A3442;
+  --unselected-song: #29292E;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+main {
+  max-width: 1280px;
+  margin: 20rem auto 0;
+
+  display: flex;
+  justify-content: center;
+  gap: 20rem;
+
+  font-family: 'Roboto', sans-serif;
+}
+
+.display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer span{
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 12.6rem;
+  line-height: 14.8rem;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  color: var(--font-color);
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.controls {
+  margin-top: 4rem;
+  display: flex;
+  gap: 3rem;  
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.cards button {
+  width: 14rem;
+  height: 15rem;
+  
+  border-radius: 2.4rem;
+  
+  color: var(--font-color);
+  background: var(--unselected-song);
+}
+
+
+button.selected {
+  background: var(--selected-song);
+}
+
+path {
+  fill: var(--font-color);
+}
+
+.selected path {
+  fill: var(--white-color);
+}
+
+.hide {
+  display: none;
+}
+
+.theme {
+  position: absolute;
+  top: 6rem;
+  right: 6rem;
+}
+
+.card {
+  position:relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.cards .card input {
+  position: absolute;
+}
+
+
+input[type="range"] {
+  -webkit-appearance: none;
+  margin-right: 2rem;
+  width: 9rem;
+  height: .4rem;
+  background: var(--font-color);
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  position: relative;
+  bottom: 2rem;
+  left: 2.6rem;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 1.6rem;
+  width: 1.6rem;
+  border-radius: 50%;
+  background: var(--font-color);
+  cursor: pointer;
+  transition: background .3s ease-in-out;
+}
+
+input[type=range]::-webkit-slider-runnable-track  {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+@media(max-width: 900px) {
+  main {
+    flex-direction: column;
+    gap: 5rem;
+  }
+  .cards {
+    align-self: center;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 5rem;
+  }
+}
